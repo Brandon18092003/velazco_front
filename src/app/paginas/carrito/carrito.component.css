@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    /* Use vh unit to fill full viewport height */
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    width: 100%;
+    min-height: 100vh;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+
+header .logo {
+    cursor: pointer;
+    width: 100px;
+    height: auto;
+}
+
+header .title {
+    color: wheat;
+    font-size: 50px;
+    margin-right: auto;
+}
+
+
+.btnLogin button {
+    margin-left: 20px;
+    width: 150px;
+    height: 45px;
+    background: linear-gradient(to left top, #ffe4c4 50%, #ffe4c4 50%);
+    border-style: none;
+    color: black;
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+}
+
+.btnLogin button span {
+    position: absolute;
+    display: block;
+}
+
+.btnLogin button span:nth-child(1) {
+    height: 3px;
+    width: 150px;
+    top: 0px;
+    left: -200px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), #000000);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes span1 {
+    0% {
+        left: -150px
+    }
+
+    100% {
+        left: 150px;
+    }
+}
+
+.btnLogin button span:nth-child(2) {
+    height: 45px;
+    width: 3px;
+    top: -70px;
+    right: 0px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span2 2s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes span2 {
+    0% {
+        top: -45px;
+    }
+
+    100% {
+        top: 45px;
+    }
+}
+
+.btnLogin button span:nth-child(3) {
+    height: 3px;
+    width: 150px;
+    right: -200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), #000000);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 3s;
+}
+
+@keyframes span3 {
+    0% {
+        right: -150px;
+    }
+
+    100% {
+        right: 150px;
+    }
+}
+
+.btnLogin button span:nth-child(4) {
+    height: 45px;
+    width: 3px;
+    bottom: -70px;
+    left: 0px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), #000000);
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 4s;
+}
+
+@keyframes span4 {
+    0% {
+        bottom: -45px;
+    }
+
+    100% {
+        bottom: 45px;
+    }
+}
+
+.btnLogin button:hover {
+    transition: all .5s;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .4);
+}
+
+.btnLogin button:hover span {
+    animation-play-state: paused;
+}
+
+.category-tabs {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    width: 125px;
+    background-color: #f1f1f1;
+    color: black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    font-size: 17px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin: 0 4px;
+}
+
+.tab-link:hover {
+    background-color: #ddd;
+}
+
+.tab-link.active {
+    background-color: #666;
+    color: white;
+}
+
+h2{
+    font-size: 40px;
+}
+
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    height: max-content;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    padding-right: 50px;
+    justify-content: space-around;
+}
+
+.carrito-vacio{
+    color: #000000;
+}
+
+.carrito-productos{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrito-producto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:black;
+    color: white;
+    padding: 10px;
+    padding-right: 1.5rem;
+}
+
+.carrito-producto-imagen{
+    width: 4rem;
+}
+
+
+.carrito-producto-eliminar{
+    border: 0;
+    background-color: transparent;
+    color: red;
+}
+
+.carrito-acciones{
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrito-acciones-vaciar{
+    border: 0;
+    background-color:brown;
+    padding: 10px;
+    border-radius: 25px;
+    color: #ddd;
+    text-transform: uppercase;
+}
+
+.carrito-acciones-derecha{
+    display: flex;
+}
+
+.carrito-acciones-total{
+    display: flex;
+    background-color:brown;
+    padding: 10px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: #ddd;
+    text-transform: uppercase;
+    gap: 1rem;
+}
+
+.carrito-acciones-comprar{
+    border: 0;
+    background-color:#000000;
+    padding: 10px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: #ddd;
+    text-transform: uppercase;
+}
+
+/*.disable{
+    display:;
+}*/

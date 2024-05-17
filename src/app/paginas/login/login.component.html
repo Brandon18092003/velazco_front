@@ -1,0 +1,82 @@
+<div class="body">
+    <div class="container" #container>
+        <div class="signin-signup">
+            <form action="" class="sign-in-form">
+                <h2 class="title">Iniciar Sesión</h2>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" [(ngModel)]="correo" name="correo" placeholder="Correo" #correoInput>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" [(ngModel)]="contra" name="contra" placeholder="Contraseña" #contraseñaInput>
+                </div>
+                <span class="btn-1" (click)="login()">Ingresar</span>
+                <p class="sin-reg"><a (click)="irInicio()">Continuar sin registrase</a></p>
+                <p class="account-text">¿No tienes una cuenta? <a href="" id="sign-up-btn2" #signUpBtn2>Registrarte</a></p>
+            </form>
+
+            <form action="" class="sign-up-form">
+                <h2 class="title">Registrarse</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input required [(ngModel)]="user.username" name="username" type="text" placeholder="Nombre">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input required [(ngModel)]="user.apellido" name="apellido" type="text" placeholder="Primer Apellido">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Segundo Apellido">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-file"></i>
+                    <input type="number" placeholder="DNI">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-tty"></i>
+                    <input type="number" placeholder="Telefono">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Correo">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                
+                <span class="btn-1" (click)="formSubmit()">Registrar</span>
+                <p class="account-text">¿Ya tienes una cuenta? <a href="" id="sign-in-btn2" #signInBtn2>Iniciar</a></p>
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Explora el mundo del azúcar con Velazco</h3>
+                    <p>Únete a Velazco y sé parte de nuestra comunidad golosa.
+                        Regístrate ahora para acceder a promociones exclusivas y sorpresas dulces.
+                        ¡Es momento de endulzar tu vida con nosotros!</p>
+                    <button class="btn" id="sign-in-btn" #signInBtn>Iniciar Sesión</button>
+                    <img src="assets/layout/login1.png" alt="" class="image">
+                </div>
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Bienvenido a Velazco</h3>
+                    <p>¡Bienvenido a Velazco, tu destino dulce!
+                        Por favor, inicia sesión para disfrutar de nuestras delicias.
+                        ¡Es hora de satisfacer tu antojo!</p>
+                    <button class="btn" id="sign-up-btn" #signUpBtn>Registrarse</button>
+                    <img src="assets/layout/login2.png" alt="" class="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
