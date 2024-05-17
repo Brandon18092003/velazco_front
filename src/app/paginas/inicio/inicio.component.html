@@ -6,7 +6,7 @@
         <div class="carrito">
             <i class="fas fa-shopping-cart"></i>
             <span class="numerito">0</span>
-        </div>  
+        </div>
         <form action="/search" class="search-form">
             <div class="search">
                 <input type="text" placeholder=" ">
@@ -37,14 +37,13 @@
         </div>
         <div class="usuario-options" *ngIf="!mostrarBotonInicioSesion">
             <i class="fas fa-user iconuser" (click)="toggleMenu()"></i>
-            <div class="sub-menu-wrap" [style.max-height.px]="menuAbierto ? 400 : 0">
+            <div class="sub-menu-wrap" [style.max-height.px]="menuAbierto ? 430 : 0">
                 <div class="sub-menu">
                     <div class="user-info">
                         <i class="fas fa-user"></i>
                         <h2>Nombre</h2>
                     </div>
                     <hr>
-
                     <a href="#" class="sub-menu-link" (click)="toggleAdministrar($event)">
                         <i class="fas fa-cogs"></i>
                         <p>Administrar</p>
@@ -53,13 +52,22 @@
 
                     <div class="administrar-submenu" [style.max-height.px]="administrarAbierto ? 200 : 0">
                         <a href="#" class="sub-menu-link">
-                            <p>Opción 1</p>
+                            <p>Usuarios</p>
                         </a>
                         <a href="#" class="sub-menu-link">
-                            <p>Opción 2</p>
+                            <p>Empleados</p>
                         </a>
                         <a href="#" class="sub-menu-link">
-                            <p>Opción 3</p>
+                            <p>Clientes</p>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <p>Productos</p>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <p>Proveedores</p>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <p>Auditorias</p>
                         </a>
                         <!-- Otras opciones de administrar aquí -->
                     </div>
@@ -72,13 +80,13 @@
 
                     <div class="perfil-submenu" [style.max-height.px]="perfilAbierto ? 100 : 0">
                         <a href="#" class="sub-menu-link">
-                            <p>Opción 1</p>
+                            <p>Datos Gnerales</p>
                         </a>
                         <a href="#" class="sub-menu-link">
-                            <p>Opción 2</p>
+                            <p>Actualizar Datos</p>
                         </a>
                         <a href="#" class="sub-menu-link">
-                            <p>Opción 3</p>
+                            <p>Cambiar Contraseña</p>
                         </a>
                         <!-- Otras opciones de perfil aquí -->
                     </div>
