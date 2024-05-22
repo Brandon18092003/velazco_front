@@ -1,0 +1,62 @@
+<div class="container crear-elemento-container">
+    <h2 class="text-dark mb-4">Crear Empleado</h2>
+    
+    <!-- Formulario para datos de usuario -->
+    <form [formGroup]="form" (ngSubmit)="guardar()" class="datos-usuario-form" novalidate>
+      <div class="form-group mb-3">
+        <label for="nombre" class="text-dark">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre" required>
+        <div *ngIf="form.controls['nombre'].invalid && form.controls['nombre'].touched" class="text-danger">
+          Nombre es requerido.
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="primerApellido" class="text-dark">Primer Apellido</label>
+        <input type="text" class="form-control" id="primerApellido" formControlName="primerApellido" placeholder="Primer Apellido" required>
+        <div *ngIf="form.controls['primerApellido'].invalid && form.controls['primerApellido'].touched" class="text-danger">
+          Primer Apellido es requerido.
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="segundoApellido" class="text-dark">Segundo Apellido</label>
+        <input type="text" class="form-control" id="segundoApellido" formControlName="segundoApellido" placeholder="Segundo Apellido" required>
+        <div *ngIf="form.controls['segundoApellido'].invalid && form.controls['segundoApellido'].touched" class="text-danger">
+          Segundo Apellido es requerido.
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="dni" class="text-dark">DNI</label>
+        <input type="text" class="form-control" id="dni" formControlName="dni" placeholder="Documento de Identidad" required>
+        <div *ngIf="form.controls['dni'].invalid && form.controls['dni'].touched" class="text-danger">
+          DNI es requerido.
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="telefono" class="text-dark">Teléfono</label>
+        <input type="text" class="form-control" id="telefono" formControlName="telefono" placeholder="Teléfono" required>
+        <div *ngIf="form.controls['telefono'].invalid && form.controls['telefono'].touched" class="text-danger">
+          Teléfono es requerido.
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="cargo" class="text-dark">Cargo</label>
+        <select class="form-control" id="cargo" formControlName="cargo" required>
+          <option value="" disabled selected>Seleccione un cargo</option>
+          <option value="Gerente">Gerente</option>
+          <option value="Supervisor">Supervisor</option>
+          <option value="Analista">Analista</option>
+          <!-- Agrega más opciones según sea necesario -->
+        </select>
+        <div *ngIf="form.controls['cargo'].invalid && form.controls['cargo'].touched" class="text-danger">
+          Cargo es requerido.
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-dark crear-button" [disabled]="!form.valid">Crear Usuario</button>
+    </form>
+  </div>

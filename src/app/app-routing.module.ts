@@ -6,6 +6,7 @@ import { InformacionComponent } from './paginas/informacion/informacion.componen
 import { PruebaComponent } from './paginas/prueba/prueba.component';
 import { IndexComponent } from './paginas/index/index.component';
 import { CarritoComponent } from './paginas/carrito/carrito.component';
+import { NavAdminComponent } from './paginas/nav-admin/nav-admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'inicio/:mostrarBotonInicioSesion', component: InicioComponent},
   { path: 'informacion', component: InformacionComponent},
   { path: 'prueba', component: PruebaComponent},
-  { path: 'carrito', component: CarritoComponent}
+  { path: 'carrito', component: CarritoComponent},
+  { path: 'nav', component: NavAdminComponent}
 ];
 
 @NgModule({

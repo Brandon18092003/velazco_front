@@ -1,0 +1,49 @@
+<div class="container crear-elemento-container">
+    <h2 class="text-dark mb-4">Crear Usuario</h2>
+    
+    <!-- Formulario para datos de usuario -->
+    <form [formGroup]="form" (ngSubmit)="guardar()" class="datos-usuario-form" novalidate>
+      <div class="form-group mb-3">
+        <label for="nombre" class="text-dark">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre" required>
+        <div *ngIf="form.controls['nombre'].invalid && form.controls['nombre'].touched" class="text-danger">
+          Nombre es requerido.
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="dni" class="text-dark">DNI</label>
+        <input type="text" class="form-control" id="dni" formControlName="dni" placeholder="Documento de Identidad" required>
+        <div *ngIf="form.controls['dni'].invalid && form.controls['dni'].touched" class="text-danger">
+          DNI es requerido.
+        </div>
+      </div>
+      
+      
+      <div class="form-group mb-3">
+        <label for="correo" class="text-dark">Correo</label>
+        <input type="email" class="form-control" id="correo" formControlName="correo" placeholder="Correo electrónico" required>
+        <div *ngIf="form.controls['correo'].invalid && form.controls['correo'].touched" class="text-danger">
+          Correo es requerido y debe ser válido.
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="contraseña" class="text-dark">Contraseña</label>
+        <input type="password" class="form-control" id="contraseña" formControlName="contraseña" placeholder="Contraseña" required>
+        <div *ngIf="form.controls['contraseña'].invalid && form.controls['contraseña'].touched" class="text-danger">
+          Contraseña es requerida.
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="confirmarContraseña" class="text-dark">Confirmar Contraseña</label>
+        <input type="password" class="form-control" id="confirmarContraseña" formControlName="confirmarContraseña" placeholder="Confirmar contraseña" required>
+        <div *ngIf="form.controls['confirmarContraseña'].invalid && form.controls['confirmarContraseña'].touched" class="text-danger">
+          Confirmar Contraseña es requerida.
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-dark crear-button" [disabled]="!form.valid">Crear Usuario</button>
+    </form>
+  </div>

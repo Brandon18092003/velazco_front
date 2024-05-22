@@ -297,6 +297,7 @@ header .search-form {
 }
 
 .sub-menu-link{
+    cursor: pointer;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -329,17 +330,6 @@ header .search-form {
     font-weight: 600;
 }
 
-.administrar-submenu,
-.perfil-submenu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s;
-}
-
-.administrar-submenu.open,
-.perfil-submenu.open {
-    max-height: 200px; /* o la altura que desees */
-}
 
 .category-tabs {
     text-align: left;

@@ -44,52 +44,17 @@
                         <h2>Nombre</h2>
                     </div>
                     <hr>
-                    <a href="#" class="sub-menu-link" (click)="toggleAdministrar($event)">
+                    <a class="sub-menu-link" (click)="toggleAdministrar()">
                         <i class="fas fa-cogs"></i>
                         <p>Administrar</p>
                         <span>></span>
                     </a>
 
-                    <div class="administrar-submenu" [style.max-height.px]="administrarAbierto ? 200 : 0">
-                        <a href="#" class="sub-menu-link">
-                            <p>Usuarios</p>
-                        </a>
-                        <a href="#" class="sub-menu-link">
-                            <p>Empleados</p>
-                        </a>
-                        <a href="#" class="sub-menu-link">
-                            <p>Clientes</p>
-                        </a>
-                        <a href="#" class="sub-menu-link">
-                            <p>Productos</p>
-                        </a>
-                        <a href="#" class="sub-menu-link">
-                            <p>Proveedores</p>
-                        </a>
-                        <a href="#" class="sub-menu-link">
-                            <p>Auditorias</p>
-                        </a>
-                        <!-- Otras opciones de administrar aquí -->
-                    </div>
-
-                    <a href="#" class="sub-menu-link" (click)="togglePerfil($event)">
+                    <a href="#" class="sub-menu-link" (click)="togglePerfil()">
                         <i class="fas fa-user-circle"></i>
                         <p>Perfil</p>
                         <span>></span>
                     </a>
-
-                    <div class="perfil-submenu" [style.max-height.px]="perfilAbierto ? 100 : 0">
-                        <a href="#" class="sub-menu-link">
-                            <p>Datos Gnerales</p>
-                        </a>
-                        <a href="#" class="sub-menu-link">
-                            <p>Actualizar Datos</p>
-                        </a>
-                        <a href="#" class="sub-menu-link">
-                            <p>Cambiar Contraseña</p>
-                        </a>
-                        <!-- Otras opciones de perfil aquí -->
-                    </div>
 
                     <a href="#" class="sub-menu-link">
                         <i class="fas fa-sign-out-alt"></i>

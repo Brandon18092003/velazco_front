@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-inicio',
@@ -14,7 +15,7 @@ export class InicioComponent implements OnInit{
   perfilAbierto: boolean = false;
   
 
-  constructor(private activaterouter:ActivatedRoute, private router:Router){}
+  constructor(private activaterouter:ActivatedRoute, private router:Router, private userService: UsuarioService){}
 
   n: number = 0;
   time_to_hidden_menu: number = 1200;
@@ -41,38 +42,11 @@ export class InicioComponent implements OnInit{
     this.menuAbierto = !this.menuAbierto;
   }
 
-  toggleAdministrar(event: Event): void {
-    event.preventDefault();
-    this.administrarAbierto = !this.administrarAbierto;
-    // Cerramos el menú de perfil si está abierto
-    if (this.perfilAbierto) {
-      this.perfilAbierto = false;
-    }
+  toggleAdministrar(): void {
+    this.router.navigate(['nav']);
   }
 
-  togglePerfil(event: Event): void {
-    event.preventDefault();
-    this.perfilAbierto = !this.perfilAbierto;
-    // Cerramos el menú de administrar si está abierto
-    if (this.administrarAbierto) {
-      this.administrarAbierto = false;
-    }
+  togglePerfil(): void {
   }
 
-  dropdown_open(): void {
-    if (this.n % 2 === 0) {
-      (document.querySelector(".cont_back_menu") as HTMLElement).className =
-        "cont_back_menu active";
-      (document.getElementById("svg_icon") as HTMLElement).style.top = "0px";
-    } else {
-      (document.querySelector(".cont_back_menu") as HTMLElement).className =
-        "cont_back_menu inactive";
-      setTimeout(() => {
-        (document.querySelector(".cont_back_menu") as HTMLElement).className =
-          "cont_back_menu div_hidde";
-        (document.getElementById("svg_icon") as HTMLElement).style.top = "-13px";
-      }, this.time_to_hidden_menu);
-    }
-    this.n++;
-  }
 }

@@ -2,3 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-outline .mat-form-field-outline-start, 
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-outline .mat-form-field-outline-end {
+  color: black; /* Cambia el color a negro */
+}
