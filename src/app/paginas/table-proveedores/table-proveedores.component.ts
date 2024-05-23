@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { EditProveedoresComponent } from '../../ventanas/edit-proveedores/edit-proveedores.component';
+import { CrearProveedoresComponent } from '../../ventanas/crear-proveedores/crear-proveedores.component';
 
 interface Proveedor {
   id: number;
@@ -59,10 +60,9 @@ export class TableProveedoresComponent implements OnInit, AfterViewInit {
   }
 
   crearElemento() {
-    const dialogRef = this.dialog.open(EditProveedoresComponent, {
+    const dialogRef = this.dialog.open(CrearProveedoresComponent, {
       width: '500px', // Ajusta el ancho según tus necesidades
       height:'520px',
-      data: {nombre: '', telefono: '', sitioWeb: '', correo: '', direccion: ''}
     });
 
     dialogRef.afterClosed().subscribe(result => {

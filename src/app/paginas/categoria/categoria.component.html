@@ -1,0 +1,177 @@
+<main>
+
+    <div class="category-tabs">
+        <section>
+            <button class="tab-link active" onclick="filterProducts('all')">Todos</button>
+            <button class="tab-link" onclick="filterProducts('galletas')">Galletas</button>
+            <button class="tab-link" onclick="filterProducts('bizcochos')">Bizcochos</button>
+            <button class="tab-link" onclick="filterProducts('pasteles')">Pasteles</button>
+            <button class="tab-link" onclick="filterProducts('dulces')">Dulces</button>
+        </section>
+    </div>
+
+
+    <main>
+        <h2 style="text-align: center;">Todos los productos</h2>
+        <section class="product-listing">
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+            <div class="product" id="product1">
+                <img src="assets/layout/dulces.jpg" alt="Product 1"
+                    class="product-image">
+                <h2 class="product-name">Bizcocho</h2>
+                <p class="product-description">This is a great product.</p>
+                <p class="product-price">$99.99</p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn" (click)="decrement()">-</button>
+                    <input type="text" id="quantity" [value]="quantity" readonly>
+                    <button class="quantity-btn" (click)="increment()">+</button>
+                </div>
+                <button class="custom-btn comprar"> Comprar</button>
+            </div>
+        </section>
+    </main>
+
+
+</main>

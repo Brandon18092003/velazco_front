@@ -13,18 +13,16 @@ export class EditProductoComponent {
   form: FormGroup;
   imagenUrl: any;
 
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<EditProductoComponent>, @Inject(MAT_DIALOG_DATA)public data: any) {
+  constructor(private fb: FormBuilder, @Inject(MAT_DIALOG_DATA)public data: any) {
     this.form = this.fb.group({
-      nombre: [data ? data.nombre : '', Validators.required],
-      descripcion: [data ? data.descripcion : '', Validators.required],
-      categoria: [data ? data.categoria : '', Validators.required],
-      precio: [data ? data.precio : '', Validators.required],
-      stock: [data ? data.stock : '', Validators.required],
-      imagen: [data ? data.imagen : '', Validators.required]
+      nombre: {value: data.nombre, disabled: false},
+      descripcion: {value: data.descripcion, disabled: false},
+      categoria: {value: data.categoria, disabled: false},
+      precio: {value: data.precio, disabled: false},
+      stock: {value: data.stock, disabled: false},
+      foto: {value: data.imagenUrl, disabled: false}
     });
 
-    // Inicializar la URL de la imagen con la imagen existente del producto
-    this.imagenUrl = data.imagen;
   }
 
   // Método para manejar el cambio de la imagen seleccionada

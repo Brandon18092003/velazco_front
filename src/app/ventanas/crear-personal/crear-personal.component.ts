@@ -17,6 +17,7 @@ export class CrearPersonalComponent {
       segundoApellido: ['', Validators.required],
       dni: ['', Validators.required],
       telefono: ['', Validators.required],
+      direccion:[ '', Validators.required],
       cargo: ['', Validators.required]
     });
   }

@@ -1,6 +1,7 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UsuarioService } from '../../services/usuario.service';
+import { isPlatformBrowser } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio',
@@ -10,12 +11,14 @@ import { UsuarioService } from '../../services/usuario.service';
 export class InicioComponent implements OnInit{
 
   mostrarBotonInicioSesion : boolean = true;
+  mostrarCarrito = false;
   menuAbierto: boolean = false;
   administrarAbierto: boolean = false;
   perfilAbierto: boolean = false;
+  quantity: number = 1;
   
 
-  constructor(private activaterouter:ActivatedRoute, private router:Router, private userService: UsuarioService){}
+  constructor(private activaterouter:ActivatedRoute, private router:Router){}
 
   n: number = 0;
   time_to_hidden_menu: number = 1200;
@@ -24,6 +27,7 @@ export class InicioComponent implements OnInit{
     this.activaterouter.params.subscribe(params => {
       this.mostrarBotonInicioSesion = params['mostrarBotonInicioSesion'] === 'true';
     });
+    
   }
 
   mostrarOpcionesUsuario(): void{
@@ -38,9 +42,15 @@ export class InicioComponent implements OnInit{
     this.router.navigate(['/informacion'])
   }
   
+  irCarrito(): void{
+    this.router.navigate(['/carrito'])
+  }
+
   toggleMenu(): void {
     this.menuAbierto = !this.menuAbierto;
   }
+
+  
 
   toggleAdministrar(): void {
     this.router.navigate(['nav']);
@@ -49,4 +59,19 @@ export class InicioComponent implements OnInit{
   togglePerfil(): void {
   }
 
+  decrement() {
+    if (this.quantity > 1) {
+      this.quantity--;
+    }
+  }
+
+  increment() {
+    this.quantity++;
+  }
+
+  
+
+  toggleCarrito(): void {
+      this.mostrarCarrito = !this.mostrarCarrito;
+  }
 }

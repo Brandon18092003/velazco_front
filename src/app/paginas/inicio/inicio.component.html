@@ -3,11 +3,11 @@
         <img src="assets/layout/logo_size_invert-removebg-preview.png" (click)="irInformacion()" alt="logo"
             class="logo">
         <h1 class="title">Dulceria Y Pasteleria Velazco</h1>
-        <div class="carrito">
+        <div class="carrito" *ngIf="!mostrarCarrito" (click)="toggleCarrito()">
             <i class="fas fa-shopping-cart"></i>
             <span class="numerito">0</span>
         </div>
-        <form action="/search" class="search-form">
+        <form *ngIf="!mostrarCarrito" action="/search" class="search-form">
             <div class="search">
                 <input type="text" placeholder=" ">
                 <div>
@@ -66,49 +66,6 @@
         </div>
     </header>
 
-    <main>
-
-        <div class="category-tabs">
-            <section>
-                <button class="tab-link active" onclick="filterProducts('all')">Todos</button>
-                <button class="tab-link" onclick="filterProducts('galletas')">Galletas</button>
-                <button class="tab-link" onclick="filterProducts('bizcochos')">Bizcochos</button>
-                <button class="tab-link" onclick="filterProducts('pasteles')">Pasteles</button>
-                <button class="tab-link" onclick="filterProducts('dulces')">Dulces</button>
-            </section>
-        </div>
-
-
-        <main>
-            <h2 style="text-align: center;">Todos los productos</h2>
-            <section class="product-listing">
-                <div class="product" id="product1">
-                    <img src="https://img.freepik.com/premium-vector/laptop_23785-22.jpg?w=740" alt="Product 1"
-                        class="product-image">
-                    <h2 class="product-name">Laptop </h2>
-                    <p class="product-description">This is a great product.</p>
-                    <p class="product-price">$99.99</p>
-                    <a class="comprar">comprar</a>
-                </div>
-                <div class="product" id="product1">
-                    <img src="https://img.freepik.com/premium-vector/laptop_23785-22.jpg?w=740" alt="Product 1"
-                        class="product-image">
-                    <h2 class="product-name">Laptop </h2>
-                    <p class="product-description">This is a great product.</p>
-                    <p class="product-price">$99.99</p>
-                    <a class="comprar">comprar</a>
-                </div>
-                <div class="product" id="product1">
-                    <img src="https://img.freepik.com/premium-vector/laptop_23785-22.jpg?w=740" alt="Product 1"
-                        class="product-image">
-                    <h2 class="product-name">Laptop </h2>
-                    <p class="product-description">This is a great product.</p>
-                    <p class="product-price">$99.99</p>
-                    <a class="comprar">comprar</a>
-                </div>
-            </section>
-        </main>
-
-
-    </main>
+    <app-categoria  *ngIf="!mostrarCarrito"></app-categoria>
+    <app-carrito *ngIf="mostrarCarrito"></app-carrito>
 </div>

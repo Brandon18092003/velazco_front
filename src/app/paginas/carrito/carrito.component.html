@@ -1,40 +1,22 @@
 <div class="body">
-    <header>
-        <img src="assets/layout/logo_size_invert-removebg-preview.png" alt="logo" class="logo">
-        <h1 class="title">Dulceria Y Pasteleria Velazco</h1>
-        <div class="btnLogin">
-            <button>
-                Inicia Sesión
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
     <main>
-
         <div class="category-tabs">
             <section>
-                <button class="tab-link active" onclick="filterProducts('all')" [class.active]=""><i
-                        class="fa fa-arrow-left"></i>Volver a la tienda</button>
+                <button class="tab-link active" (click)="irInicio()" [class.active]=""><i class="fa fa-arrow-left"></i>Volver a la tienda</button>
             </section>
         </div>
-
 
         <main>
             <h2 style="text-align: center;">Carrito</h2>
             <div class="contenedor-carrito">
-                <p class="carrito-vacio">El carrito esta vacio</p>
+                <p class="carrito-vacio">El carrito está vacío</p>
 
                 <div class="carrito-productos disable">
                     <div class="carrito-producto">
-                        <img class="carrito-producto-imagen"
-                            src="https://img.freepik.com/premium-vector/laptop_23785-22.jpg?w=740" alt="">
+                        <img class="carrito-producto-imagen" src="https://img.freepik.com/premium-vector/laptop_23785-22.jpg?w=740" alt="">
                         <div class="carrito-producto-titulo">
-                            <small>Titulo</small>
-                            <h3>Produto 1</h3>
+                            <small>Título</small>
+                            <h3>Producto 1</h3>
                         </div>
                         <div class="carrito-producto-cantidad">
                             <small>Cantidad</small>
@@ -52,11 +34,10 @@
                     </div>
 
                     <div class="carrito-producto">
-                        <img class="carrito-producto-imagen"
-                            src="https://img.freepik.com/premium-vector/laptop_23785-22.jpg?w=740" alt="">
+                        <img class="carrito-producto-imagen" src="https://img.freepik.com/premium-vector/laptop_23785-22.jpg?w=740" alt="">
                         <div class="carrito-producto-titulo">
-                            <small>Titulo</small>
-                            <h3>Produto 1</h3>
+                            <small>Título</small>
+                            <h3>Producto 1</h3>
                         </div>
                         <div class="carrito-producto-cantidad">
                             <small>Cantidad</small>
@@ -74,11 +55,10 @@
                     </div>
 
                     <div class="carrito-producto">
-                        <img class="carrito-producto-imagen"
-                            src="https://img.freepik.com/premium-vector/laptop_23785-22.jpg?w=740" alt="">
+                        <img class="carrito-producto-imagen" src="https://img.freepik.com/premium-vector/laptop_23785-22.jpg?w=740" alt="">
                         <div class="carrito-producto-titulo">
-                            <small>Titulo</small>
-                            <h3>Produto 1</h3>
+                            <small>Título</small>
+                            <h3>Producto 1</h3>
                         </div>
                         <div class="carrito-producto-cantidad">
                             <small>Cantidad</small>
@@ -110,7 +90,5 @@
                 </div>
             </div>
         </main>
-
-
     </main>
 </div>

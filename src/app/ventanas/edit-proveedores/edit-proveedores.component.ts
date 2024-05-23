@@ -11,13 +11,13 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class EditProveedoresComponent {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<EditProveedoresComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.form = this.fb.group({
-      nombre: [data ? data.nombre : '', Validators.required],
-      telefono: [data ? data.telefono : '', Validators.required],
-      sitioWeb: [data ? data.sitioWeb : '', Validators.required],
-      correo: [data ? data.correo : '', [Validators.required, Validators.email]],
-      direccion: [data ? data.direccion : '', Validators.required],
+      nombre: {value: data.nombre, disabled: false},
+      telefono: {value: data.telefono, disabled: false},
+      sitioWeb: {value: data.sitioWeb, disabled: false},
+      correo: {value: data.correo, disabled: false},
+      direccion: {value: data.direccion, disabled: false}
     });
   }
 

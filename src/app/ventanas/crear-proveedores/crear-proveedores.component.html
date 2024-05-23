@@ -1,0 +1,48 @@
+<div class="container crear-elemento-container">
+    <h2 class="text-dark mb-4">Guardar proveedor</h2>
+  
+    <!-- Formulario para datos de usuario -->
+    <form [formGroup]="form" (ngSubmit)="guardar()" class="datos-usuario-form" novalidate>
+      <div class="form-group mb-3">
+        <label for="nombre" class="text-dark">Nombre</label>
+        <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre" required>
+        <div *ngIf="form.controls['nombre'].invalid && form.controls['nombre'].touched" class="text-danger">
+          Nombre es requerido.
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="telefono" class="text-dark">Teléfono</label>
+        <input type="tel" class="form-control" id="telefono" formControlName="telefono" placeholder="Teléfono" required>
+        <div *ngIf="form.controls['telefono'].invalid && form.controls['telefono'].touched" class="text-danger">
+          Telefono es requerido
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="sitioWeb" class="text-dark">Sitio Web</label>
+        <input type="url" class="form-control" id="sitioWeb" formControlName="sitioWeb" placeholder="Sitio Web" required>
+        <div *ngIf="form.controls['sitioWeb'].invalid && form.controls['sitioWeb'].touched" class="text-danger">
+          Sitio Web es requerido
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="correo" class="text-dark">Correo Electrónico</label>
+        <input type="email" class="form-control" id="correo" formControlName="correo" placeholder="Correo Electrónico" required>
+        <div *ngIf="form.controls['correo'].invalid && form.controls['correo'].touched" class="text-danger">
+          Correo es requerido
+        </div>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="direccion" class="text-dark">Dirección</label>
+        <input type="text" class="form-control" id="direccion" formControlName="direccion" placeholder="Dirección" required>
+        <div *ngIf="form.controls['direccion'].invalid && form.controls['direccion'].touched" class="text-danger">
+          Dirección es requerida.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-dark crear-button" [disabled]="!form.valid">Guardar</button>
+    </form>
+  </div>

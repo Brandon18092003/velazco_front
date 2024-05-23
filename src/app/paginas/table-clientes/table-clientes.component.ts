@@ -10,6 +10,7 @@ interface Cliente {
   apellidoMaterno: string;
   telefono: string;
   dni: string;
+  direccion: string;
 }
 
 @Component({
@@ -21,12 +22,12 @@ export class TableClientesComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | null = null;
   @ViewChild(MatSort, { static: true }) sort: MatSort | null = null;
 
-  displayedColumns: string[] = ['id', 'nombre', 'apellidoPaterno', 'apellidoMaterno', 'telefono', 'dni'];
+  displayedColumns: string[] = ['id', 'nombre', 'apellidoPaterno', 'apellidoMaterno', 'telefono', 'dni', 'direccion'];
   dataSource: MatTableDataSource<Cliente>;
 
   constructor() {
     const initialData: Cliente[] = [
-      { id: 1, nombre: 'Juan', apellidoPaterno: 'Pérez', apellidoMaterno: 'Gómez', telefono: '123456789', dni: '12345678A' },
+      { id: 1, nombre: 'Juan', apellidoPaterno: 'Pérez', apellidoMaterno: 'Gómez', telefono: '123456789', dni: '12345678A', direccion: 'Av. 8' },
       // Agrega más clientes según sea necesario
     ];
     this.dataSource = new MatTableDataSource(initialData);

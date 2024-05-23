@@ -14,6 +14,7 @@ interface Empleado {
   apellidoMaterno: string;
   telefono: string;
   dni: string;
+  direccion: string;
   cargo: string;
   bloqueado?: boolean;
 }
@@ -28,13 +29,13 @@ export class TableEmpleadosComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort?: MatSort;
 
   filterValue: string = '';
-  displayedColumns = ['id', 'nombre', 'apellidoPaterno', 'apellidoMaterno', 'telefono','dni', 'cargo', 'acciones'];
+  displayedColumns = ['id', 'nombre', 'apellidoPaterno', 'apellidoMaterno', 'telefono','dni', 'direccion', 'cargo', 'acciones'];
   dataSource: MatTableDataSource<Empleado>;
 
   constructor(public dialog: MatDialog) {
     // Inicializar la fuente de datos
     const initialData: Empleado[] = [
-      { id: 1, nombre: 'Juan', apellidoPaterno: 'Perez', apellidoMaterno: 'Gomez',telefono: '123456789', dni: '12345678', cargo: 'Gerente' },
+      { id: 1, nombre: 'Juan', apellidoPaterno: 'Perez', apellidoMaterno: 'Gomez',telefono: '123456789', dni: '12345678',direccion: 'Av.Lorenzo', cargo: 'Gerente' },
       // Agrega más filas de datos aquí según sea necesario
     ];
     this.dataSource = new MatTableDataSource(initialData);
@@ -126,6 +127,7 @@ export class TableEmpleadosComponent implements OnInit, AfterViewInit {
         case 'apellidoMaterno': return compare(a.apellidoMaterno, b.apellidoMaterno, isAsc);
         case 'telefono': return compare(a.telefono, b.telefono, isAsc);
         case 'dni': return compare(a.dni, b.dni, isAsc);
+        case 'direccion': return compare(a.direccion, b.direccion, isAsc);
         case 'cargo': return compare(a.cargo, b.cargo, isAsc);
         default: return 0;
       }

@@ -16,7 +16,7 @@
     width: 100%;
     min-height: 100vh;
     color: #333;
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif
 }
 
 header {
@@ -39,7 +39,7 @@ header .title {
     font-size: 50px;
 }
 
-header .carrito{
+header .carrito {
     cursor: pointer;
     background-color: bisque;
     padding: 10px;
@@ -47,7 +47,7 @@ header .carrito{
     margin-left: auto;
 }
 
-.carrito .fas{
+.carrito .fas {
     font-size: 25px;
 }
 
@@ -238,12 +238,12 @@ header .search-form {
     animation-play-state: paused;
 }
 
-.usuario-options{
+.usuario-options {
     margin-left: 20px;
     position: relative;
 }
 
-.usuario-options .iconuser{
+.usuario-options .iconuser {
     padding: 10px;
     background-color: bisque;
     color: black;
@@ -251,7 +251,7 @@ header .search-form {
     border-radius: 50px;
 }
 
-.sub-menu-wrap{
+.sub-menu-wrap {
     position: absolute;
     top: 100%;
     right: 10%;
@@ -261,42 +261,43 @@ header .search-form {
     transition: max-height 0.5s;
 }
 
-.sub-menu-wrap .open-menu{
+.sub-menu-wrap .open-menu {
     max-height: 400px;
 }
 
-.sub-menu{
+.sub-menu {
     background: bisque;
     padding: 20px;
     margin: 10px;
 }
 
-.sub-menu .user-info{
+.sub-menu .user-info {
     display: flex;
     align-items: center;
 }
 
-.sub-menu .user-info h2{
+.sub-menu .user-info h2 {
     margin-left: 10px;
     font-weight: 500;
     margin-bottom: 0px;
 }
 
-.sub-menu .user-info i{
+.sub-menu .user-info i {
     font-size: 25px;
     border-radius: 50%;
     margin-right: 15px;
 }
 
-.sub-menu hr{
+.sub-menu hr {
     border: 0;
     height: 1px;
     width: 100%;
     background: #000;
-    margin: 15px 0 10px;;
+    margin: 15px 0 10px;
+    ;
 }
 
-.sub-menu-link{
+.sub-menu-link {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -305,28 +306,28 @@ header .search-form {
     margin: 12px 0;
 }
 
-.sub-menu-link p{
+.sub-menu-link p {
     margin-left: 10px;
     flex: 1;
     margin: auto;
     width: 100%;
 }
 
-.sub-menu-link i{
+.sub-menu-link i {
     font-size: 25px;
     width: 40px;
 }
 
-.sub-menu-link span{
+.sub-menu-link span {
     font-size: 22px;
     transition: transform 0.5s;
 }
 
-.sub-menu-link:hover span{
+.sub-menu-link:hover span {
     transform: translateX(5px);
 }
 
-.sub-menu-link:hover p{
+.sub-menu-link:hover p {
     font-weight: 600;
 }
 
@@ -370,77 +371,132 @@ header .search-form {
 }
 
 .product {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color:burlywood;
+    border: 1px solid brown;
+    background-color: #fffaf0; /* Beige, para un contraste sutil con el fondo */
+    text-align: center;
     margin: 10px;
     padding: 10px;
     width: 300px;
     box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
     width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    border-bottom: 1px solid #ddd;
+    height: 200px;
+    object-fit: cover;
     margin-bottom: 10px;
+    border-radius: 10px 10px 0 0; /* Redondear esquinas superiores */
 }
 
 .product-name {
-    color: black;
+    color: brown;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
 }
 
 .product-description {
     font-size: 0.9rem;
-    color: white;
-
+    color: #4d4d4d;
+    margin-bottom: 10px;
 }
+
 
 .product-price {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 1.4rem;
+    color: brown; /* Un tono de marrón oscuro */
+    margin-bottom: 10px;
 }
 
-.product a {
+.quantity-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.quantity-btn {
+    background-color: brown;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-    color: brown;
-    font-size: 25px;
-    text-decoration: none;
-    margin: auto;
-    display: block;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 200px;
-    height: 70px;
-    line-height: 80px;
+    font-size: 20px;
+    line-height: 1;
+    border-radius: 5px;
+}
+
+.quantity-btn:hover {
+    background-color: #d2691e; /* Chocolate */
+}
+
+#quantity {
+    width: 40px;
     text-align: center;
-    transition: all .4s ease;
-    z-index: 1;
+    border: 1px solid brown;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 16px;
+    color: #4d4d4d;
 }
 
-.product a:after{
-    content: '';
-    display: block;
+
+.custom-btn {
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    color: antiquewhite;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
     background: brown;
-    width: 100%;
-    height: 5px;
-    margin-top: -20px;
-    transition: all .4s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+    outline: none;
+    position: relative;
 }
 
-.product a:hover:after {
-    transform: translate(0, -50px);
-    width: 100%;
-    height: 50px;
-    opacity: .0;
-  }
+.custom-btn.comprar {
+    color: white;
+    background-color: brown; /* Fondo marrón oscuro */
+}
 
-  .product a:hover {
-    color: #000;
-  }
+.custom-btn.comprar:hover {
+    background-color: #d2691e; /* Chocolate, un marrón más claro para el hover */
+    color: antiquewhite;
+}
+
+.custom-btn.comprar:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: brown;
+    background-image: linear-gradient(315deg, brown 0%, brown 74%);
+    transition: all 0.3s ease;
+}
+
+.custom-btn.comprar:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+}
+
+.custom-btn.comprar:active {
+    top: 2px;
+}
+
+
 @media (max-width: 600px) {
     .category-tabs .tab-link {
         display: block;

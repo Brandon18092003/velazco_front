@@ -7,12 +7,16 @@ import baserUrl from './helper';
 })
 export class UsuarioService {
 
+  private isAuthenticated = false;
   constructor(private httpClient: HttpClient) { }
 
   public añadirUsuario(user:any){
     return this.httpClient.post(`${baserUrl}/usuarios/`,user);
   }
 
+  checkAuthentication(): boolean {
+    return !!localStorage.getItem('userToken');
+  }
   login(username: string, password: string): boolean {
     // Simulando la lógica de autenticación, aquí puedes implementar la autenticación con tus credenciales
     if (username === 'usuario' && password === '1234') {
@@ -24,7 +28,8 @@ export class UsuarioService {
   }
 
   logout(): void {
-    localStorage.removeItem('loggedIn');
+    localStorage.removeItem('userToken');
+    this.isAuthenticated = false;
   }
 
   isLoggedIn(): boolean {

@@ -5,6 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { EditProductoComponent } from '../../ventanas/edit-producto/edit-producto.component';
+import { CrearProductoComponent } from '../../ventanas/crear-producto/crear-producto.component';
 
 interface Producto {
   id: number;
@@ -101,10 +102,9 @@ export class TableProductosComponent implements OnInit, AfterViewInit {
   }
 
   crearElemento() {
-    const dialogRef = this.dialog.open(EditProductoComponent, {
+    const dialogRef = this.dialog.open(CrearProductoComponent, {
       width: '500px', // Ajusta el ancho según tus necesidades
       height:'650px',
-      data: { nombre: '', descripcion: '', categoria: '', precio: null, stock: null, imagen: '' }
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -42,6 +42,10 @@ import { CrearPersonalComponent } from './ventanas/crear-personal/crear-personal
 import { CrearUserpComponent } from './ventanas/crear-userp/crear-userp.component';
 import { EditProductoComponent } from './ventanas/edit-producto/edit-producto.component';
 import { EditProveedoresComponent } from './ventanas/edit-proveedores/edit-proveedores.component';
+import { EditUsuarioComponent } from './ventanas/edit-usuario/edit-usuario.component';
+import { CrearProductoComponent } from './ventanas/crear-producto/crear-producto.component';
+import { CrearProveedoresComponent } from './ventanas/crear-proveedores/crear-proveedores.component';
+import { CategoriaComponent } from './paginas/categoria/categoria.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +66,11 @@ import { EditProveedoresComponent } from './ventanas/edit-proveedores/edit-prove
     CrearPersonalComponent,
     CrearUserpComponent,
     EditProductoComponent,
-    EditProveedoresComponent
+    EditProveedoresComponent,
+    EditUsuarioComponent,
+    CrearProductoComponent,
+    CrearProveedoresComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,

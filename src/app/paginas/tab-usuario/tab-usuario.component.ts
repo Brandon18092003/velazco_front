@@ -1,9 +1,11 @@
+import Swal from 'sweetalert2';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CrearUsuarioComponent } from '../../ventanas/crear-usuario/crear-usuario.component';
+import { EditUsuarioComponent } from '../../ventanas/edit-usuario/edit-usuario.component';
 
 interface Usuario {
   id: number;
@@ -12,6 +14,7 @@ interface Usuario {
   Nombre: string;
   Apellido: string;
   Correo: string;
+  bloqueado?: boolean;
 }
 
 @Component({
@@ -24,7 +27,7 @@ export class TabUsuarioComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort?: MatSort;
 
   filterValue: string = '';
-  displayedColumns = ['id', 'rol', 'usuario', 'Nombre', 'Apellido', 'Correo'];
+  displayedColumns = ['id', 'rol', 'usuario', 'Nombre', 'Apellido', 'Correo', 'acciones'];
   dataSource: MatTableDataSource<Usuario>;
 
   // Definición de propiedades para la paginación
@@ -99,6 +102,44 @@ export class TabUsuarioComponent implements OnInit, AfterViewInit {
       this.currentPage--;
       this.goToPage(this.currentPage);
     }
+  }
+
+  editar(element: Usuario) {
+    // Aquí puedes implementar la lógica para eliminar un producto
+    const dialogRef = this.dialog.open(EditUsuarioComponent, {
+      width: '500px',
+      height: '350px',
+      data: { nombre: element.Nombre, correo: element.Correo}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('El diálogo se ha cerrado');
+    });
+  }
+
+  eliminar(element: Usuario): void {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción no se puede deshacer',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#FF0000', // Rojo para el botón de confirmación
+      cancelButtonColor: '#000000', // Negro para el botón de cancelar
+      confirmButtonText: 'Sí, eliminar fila',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Lógica para eliminar la fila aquí
+        // this.dataSource = this.dataSource.filter(item => item !== element);
+        Swal.fire({
+          title: 'Eliminado',
+          text: 'La fila ha sido eliminada.',
+          icon: 'success',
+          confirmButtonColor: '#000000' // Negro para el botón OK de la alerta de eliminación
+        });
+        element.bloqueado = true;
+      }
+    });
   }
 
   nextPage() {
